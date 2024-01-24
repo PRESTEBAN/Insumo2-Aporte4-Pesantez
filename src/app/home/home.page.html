@@ -1,0 +1,31 @@
+<ion-card color="dark" text-color="light">
+  <ion-card-header>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <!-- Número -->
+      <ion-col size="12" class="ion-text-center">
+        <ion-label>{{ numberValue }}</ion-label>
+      </ion-col>
+
+      <!-- Botones de incremento y decremento y símbolo de buscar -->
+      <ion-col size="12" class="button-container ion-text-center">
+        <ion-button (click)="increment()" class="button">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="decrement()" class="button">
+          <ion-icon name="remove-outline"></ion-icon>
+        </ion-button>
+        <ion-icon name="search-outline" class="search-icon" (click)="search()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card-header>
+
+  <ion-card-content class="ion-text-center">
+    <!-- Contenido adicional de la card -->
+    <img *ngIf="pokemonImage" [src]="pokemonImage" alt="Pokemon Image" class="center-image">
+  </ion-card-content>
+
+  <!-- Nombre del Pokémon -->
+  <ion-card-subtitle class="ion-text-center">{{ cardTitle }}</ion-card-subtitle>
+</ion-card>
+
+

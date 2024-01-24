@@ -1,0 +1,31 @@
+ion-card {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  align-items: center;
+}
+.center-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+ion-footer {
+  background: #f8f8f8;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  margin-top: 5px;
+}
+
+.search-icon {
+  margin-top: 10px; /* Ajusta el margen según sea necesario */
+}
