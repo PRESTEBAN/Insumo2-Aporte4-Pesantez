@@ -1,31 +1,47 @@
-<ion-card color="dark" text-color="light">
-  <ion-card-header>
-    <ion-row class="ion-align-items-center ion-justify-content-center">
-      <!-- Número -->
-      <ion-col size="12" class="ion-text-center">
-        <ion-label>{{ numberValue }}</ion-label>
-      </ion-col>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <strong>Pokedex</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-      <!-- Botones de incremento y decremento y símbolo de buscar -->
-      <ion-col size="12" class="button-container ion-text-center">
-        <ion-button (click)="increment()" class="button">
-          <ion-icon name="add-outline"></ion-icon>
-        </ion-button>
-        <ion-button (click)="decrement()" class="button">
-          <ion-icon name="remove-outline"></ion-icon>
-        </ion-button>
-        <ion-icon name="search-outline" class="search-icon" (click)="search()"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-card-header>
+<ion-content class="pokedex-background"> 
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-card color="dark" text-color="light">
+      <ion-card-header>
+        <ion-row class="ion-align-items-center ion-justify-content-center">
+          <!-- Número -->
+          <ion-col size="12" class="ion-text-center">
+            <ion-label>{{ numberValue }}</ion-label>
+          </ion-col>
 
-  <ion-card-content class="ion-text-center">
-    <!-- Contenido adicional de la card -->
-    <img *ngIf="pokemonImage" [src]="pokemonImage" alt="Pokemon Image" class="center-image">
-  </ion-card-content>
+          <!-- Botones de incremento y decremento y símbolo de buscar -->
+          <ion-col size="12" class="button-container ion-text-center">
+            <ion-button (click)="increment()" class="button">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="decrement()" class="button">
+              <ion-icon name="remove-outline"></ion-icon>
+            </ion-button>
+            <ion-icon name="search-outline" class="search-icon" (click)="search()"></ion-icon>
+            <ion-card-subtitle class="ion-text-center">{{ cardTitle }}</ion-card-subtitle>
+            <img *ngIf="pokemonImage" [src]="pokemonImage" alt="Pokemon Image" class="center-image">
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+    </ion-card>
+    
+    <br>
 
-  <!-- Nombre del Pokémon -->
-  <ion-card-subtitle class="ion-text-center">{{ cardTitle }}</ion-card-subtitle>
-</ion-card>
-
-
+    <!-- Segunda Card -->
+    <ion-card color="primary">
+      <ion-card-content class="ion-text-center">
+        <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar Pokémon" (keyup.enter)="search()"></ion-searchbar>
+        <ion-icon name="search-outline" class="search-icon" (click)="searchByIcon()"></ion-icon>
+        <ion-card-subtitle class="ion-text-center">{{ searchCardTitle }}</ion-card-subtitle>
+        <img *ngIf="searchPokemonImage" [src]="searchPokemonImage" alt="Pokemon Image" class="center-image">
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+</ion-content>  

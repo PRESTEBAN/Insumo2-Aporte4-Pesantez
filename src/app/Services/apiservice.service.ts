@@ -9,15 +9,16 @@ export class APIServiceService {
   private apiUrl = 'https://pokeapi.co/api/v2/';
   constructor(private http: HttpClient) { }
 
+
   getPokemonID(id: number): Observable<any> {
-    // Utiliza el método get del HttpClient para realizar una solicitud GET a la URL de la PokeAPI con el ID del Pokémon.
-    return this.http.get(this.apiUrl+"pokemon/"+id);
+    return this.http.get(this.apiUrl + "pokemon/" + id);
   }
 
   getPokemonName(name: string): Observable<any> {
-    // Utiliza el método get del HttpClient para realizar una solicitud GET a la URL de la PokeAPI con el nombre del Pokémon.
-    return this.http.get(this.apiUrl+"pokemon/"+name);
+    return this.http.get(this.apiUrl + "pokemon/" + name);
   }
 
   
 }
+
+
